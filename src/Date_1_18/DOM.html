@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>DOM</title>
+        <script>
+            function f() {
+                var dom_text = document.getElementById("zhang");
+                // alert(dom_text.id);
+                // alert(dom_text.type);
+                var username = dom_text.value;
+                //验证该用户名是否合法，需要用到“正则表达式”，具体写法如下
+                var demo = /^\w{5,12}$/;
+                if (demo.test(username)){
+                    //这里的test方式用于比较指定字符串是否匹配指定的规则。
+                    //匹配为true，否则为false
+                    alert("用户名合法~");
+                }else{
+                    alert("用户名不合法！！");
+                }
+            }
+        </script>
+    </head>
+    <body style="font-size: 20px;letter-spacing: 4px">
+        <center>
+            <p style="display: inline-block;padding-top: 50px">用户名:</p>
+            <input type="text" id="zhang" value="请输入相应值">
+            <button onclick="f()">校验</button>
+        </center>
+    </body>
+</html>

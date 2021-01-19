@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>JS的正则表达式对象</title>
+        <script type="text/javascript">
+            var patt = new RegExp("e");
+            var pat = /e/;//与上一行等效。
+            var k = /[abc]/;//意为：在中括号中字符满足任意一个都算true
+            var kk = /[a-z]/;//全体小写字母
+            var shuzi = /[0-9]/;//检查是否包含任意数字。
+            var changyong = /\w/;// \w指任意单词字符(大小写字符，数字，下划线等)，在平时用的最多。
+            var n = /a+/;//表示其中是否“至少”包含一个及其以上的a
+            var j = /a*/;
+            /**
+             * 表示表达式中至少包含“零个”及其以上的a
+             * 该写法的权限很大，从前往后检查是否满足条件，一旦满足就“立即”返回true
+             * 不再继续向后检查。
+             */
+            var t = /t?/;//包含零个或者一个。
+            var b = /v{3}/;//表示该字符串中必须至少包含连续的3个v。
+            var gg = /jj{4,7}/;//最少连续的4个jj，最多连续7个。
+
+            var ff = /i{8,}/;//表示该自负床中至少包含8个i
+
+            var qq = /p$/;//表示该字符串必须由p结尾。
+            var nn = /^u/;//表示该字符串必须以u开头。
+
+            var cc = /^g{8,9}$/;//表示该字符串必须“从头到尾”都符合此标准。
+
+            // alert(patt);
+            //直接输出正则为：/e/
+            var demo = "abcd";
+            alert(k.test(demo));
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

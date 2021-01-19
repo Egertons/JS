@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>DOM3</title>
+        <script type="text/javascript">
+            function f() {
+                var Username = document.getElementById("hh");
+                var Username_Con = Username.value;
+                var oo = document.getElementById("oo");
+                var Reg = /^\w{5,12}$/;
+                if (Reg.test(Username_Con)){
+                    oo.innerHTML = "<img src=\"img/correct.png\" style='height: 18px;width: 18px'>";
+                }else{
+                    oo.innerHTML = "<img src=\"img/error.png\" style='height: 18px;width: 18px'>";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <span>用户名：</span>
+        <input type="text" id="hh" value="请输入您的用户名">
+        <span id="oo"></span>
+        <button onclick="f()">校验</button>
+    </body>
+</html>

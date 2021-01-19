@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>DOM2</title>
+        <script type="text/javascript">
+            function Username() {
+                var demo = document.getElementById("jj");
+                var demo_con = demo.value;
+                var demo_2 = document.getElementById("ll");
+                var text = /^\w{5,12}$/;
+                if (text.test(demo_con)){
+                    demo_2.innerHTML = "用户名合法哦~";
+                }else{
+                    demo_2.innerHTML = "用户名不合法 请重新输入";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <span>用户名：</span>
+        <input type="text" id="jj" value="请输入相应的值">
+        <span id="ll" style="color: mediumvioletred"></span>
+        <button onclick="Username()">校验</button>
+    </body>
+</html>
