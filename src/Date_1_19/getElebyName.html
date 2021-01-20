@@ -18,21 +18,49 @@
         </style>
         <script type="text/javascript">
             function checkAll() {
-                
+                var hobbies = document.getElementsByName("hobby");//这个方法是根据name属性查询返回多个标签对象的集合。
+                //这个集合的操作方法和”数组“是一样的。
+                //集合中每个元素均为dom对象。
+                // alert(hobbies.length);
+                //它们在集合中的顺序就是其在html页面中”定义“的顺序。
+                //alert(hobbies[0].checked);//checked表示复选框的选中状态。也可以通过dom对象来获取。
+                //且这个checked属性”可读可写“！！
+                for (var a = 0;a<hobbies.length;a++){
+                    hobbies[a].checked = true;
+                }
+            }
+            function checkNo() {
+                var hobbies = document.getElementsByName("hobby");
+                for (var b = 0;b<hobbies.length;b++){
+                    hobbies[b].checked = false;
+                }
+            }
+            //反选
+            function checkRe() {
+                var hobbies = document.getElementsByName("hobby");
+                for (var t = 0;t<hobbies.length;t++){
+                    //直接取反更暴力
+                    hobbies[t].checked = !hobbies[t].checked;
+                    // if (hobbies[t].checked){
+                    //     hobbies[t].checked = false;
+                    // }else{
+                    //     hobbies[t].checked = true;
+                    // }
+                }
             }
         </script>
     </head>
     <body>
         <div id="a">
             兴趣爱好：
-            <input type="checkbox" name="hobby" value="cpp">C++
+            <input type="checkbox" name="hobby" value="cpp" checked="checked">C++
             <input type="checkbox" name="hobby" value="java">java
             <input type="checkbox" name="hobby" value="Python">Python
             <input type="checkbox" name="hobby" value="JS">JavaScript
             <div id="b">
                 <button onclick="checkAll()">全选</button>
-                <button>全不选</button>
-                <button>反选</button>
+                <button onclick="checkNo()">全不选</button>
+                <button onclick="checkRe()">反选</button>
             </div>
         </div>
     </body>
