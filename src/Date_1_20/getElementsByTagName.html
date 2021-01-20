@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>getElementsByTagName</title>
+        <!--按照标签名来获取指定的对象集合-->
+        <style type="text/css">
+            body{
+                line-height: 25px;
+            }
+            #a{
+                padding-top: 50px;
+                text-align: center;
+                letter-spacing: 5px;
+            }
+            #b{
+                letter-spacing: 3px;
+            }
+        </style>
+        <script type="text/javascript">
+            function checkAll() {
+                //此方法是按照指定的标签名来进行查询并返回相应的集合。
+                //该集合中的操作和数组一样，并且集合中都是dom对象。
+                var inputs = document.getElementsByTagName("input");
+                for (var a = 0 ;a<inputs.length;a++){
+                    inputs[a].checked = true;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div id="a">
+            兴趣爱好：
+            <input type="checkbox" value="cpp">C++
+            <input type="checkbox" value="java">java
+            <input type="checkbox" value="Python">Python
+            <input type="checkbox" value="JS">JavaScript
+            <div id="b">
+                <button onclick="checkAll()">全选</button>
+            </div>
+        </div>
+    </body>
+</html>
